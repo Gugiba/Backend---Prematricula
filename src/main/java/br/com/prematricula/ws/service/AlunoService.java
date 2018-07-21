@@ -26,7 +26,7 @@ public class AlunoService {
 	}
 	
 	
-	public Aluno buscarPorMatricula(long matricula) {
+	public Aluno buscarPorMatricula(int matricula) {
 		return alunoRepository.findOne(matricula);
 	}
 	

@@ -5,25 +5,32 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "alunos")
 public class Aluno {
 
 	
 	@Id
-	private Long matricula;
-	@Column(nullable = false)
+	private int matricula;
+	
+	@Column(name = "nome",nullable = false)
 	private String nome;
-	@Column(nullable = false)
+	
+	@Column(name = "cpf",nullable = false)
 	private String cpf;
-	@Column(nullable = false)
+	
+	@Column(name = "senha",nullable = false)
 	private String senha;
-	@Column(nullable = false)
+	@Column(name = "dataNascimento",nullable = false)
 	private String dataNascimento;
-	public Long getMatricula() {
+	
+	
+	public int getMatricula() {
 		return matricula;
 	}
-	public void setMatricula(Long matricula) {
+	public void setMatricula(int matricula) {
 		this.matricula = matricula;
 	}
 	public String getNome() {

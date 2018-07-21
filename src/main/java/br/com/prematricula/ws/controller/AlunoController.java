@@ -21,7 +21,7 @@ public class AlunoController {
 	AlunoService alunoService;
 	
 	
-	@RequestMapping(method = RequestMethod.POST, value = "api/aluno/post")
+	@RequestMapping(method = RequestMethod.POST, value = "api/alunos/post")
 	public ResponseEntity<Aluno> cadastrarAluno(@RequestBody Aluno aluno){
 		
 		Aluno alunoCadastrado = alunoService.cadastrar(aluno);
@@ -29,7 +29,7 @@ public class AlunoController {
 		
 	}
 	
-	@RequestMapping(method = RequestMethod.GET, value = "api/aluno/get",produces = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(method = RequestMethod.GET, value = "api/alunos/get",produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Collection<Aluno>> buscarTodosAlunos(){
 		
 		Collection<Aluno> alunosBuscados = alunoService.buscarTodos();
@@ -38,8 +38,8 @@ public class AlunoController {
 		
 	}
 	
-	@RequestMapping(value = "api/aluno/get/{matricula}", method = RequestMethod.GET)
-	public Aluno getById(@PathVariable("matricula") Long matricula) {
+	@RequestMapping(value = "api/alunos/get/{matricula}", method = RequestMethod.GET)
+	public Aluno getById(@PathVariable("matricula") int matricula) {
 		return alunoService.buscarPorMatricula(matricula);
 	}
 	
