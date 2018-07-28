@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.com.prematricula.exception.RegisterNotFoundException;
-
 import br.com.prematricula.ws.model.Disciplina;
 import br.com.prematricula.ws.repository.DisciplinaRepository;
 
@@ -20,8 +19,14 @@ public class DisciplinaService {
 	DisciplinaRepository disciplinaRepository;
 	
 
-	public Disciplina add(Disciplina disciplina) {
-		return disciplinaRepository.save(disciplina);
+	public Collection<Disciplina> add(Collection<Disciplina> disciplinas) {
+		
+		for (Disciplina disciplina : disciplinas) {
+			disciplinaRepository.save(disciplina);
+		}
+		
+		
+		return disciplinas;
 	}
 	
 	public Collection<Disciplina> buscarTodos() {
