@@ -27,6 +27,8 @@ public class DisciplinaService {
 	public Collection<Disciplina> buscarTodos() {
 		return disciplinaRepository.findAll();
 	}
+	
+	
 	public Disciplina BuscaId(Integer id) throws Exception {
 		Disciplina disciplina = disciplinaRepository.findOne(id);
 		

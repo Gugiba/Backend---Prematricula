@@ -5,6 +5,7 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import br.com.prematricula.exception.RegisterNotFoundException;
 import br.com.prematricula.ws.model.Aluno;
 import br.com.prematricula.ws.repository.AlunoRepository;
 
@@ -27,10 +28,19 @@ public class AlunoService {
 	
 	
 	public Aluno buscarPorMatricula(int matricula) {
-		return alunoRepository.findOne(matricula);
+		
+		Aluno aluno = alunoRepository.findOne(matricula);
+		
+		if(aluno == null) {
+			throw new RegisterNotFoundException("Esse aluno nao existe!");
+		}
+		
+		
+		return aluno;
 	}
 	
 	public Aluno alteraAluno(Aluno aluno) {
+		
 		return alunoRepository.save(aluno);
 	}
 	
