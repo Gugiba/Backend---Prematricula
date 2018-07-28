@@ -56,16 +56,16 @@ public class DisciplinaService {
 	}
 	
 	public Disciplina update(Disciplina disciplina, int id) throws Exception {
-Disciplina disciplinaASerAtualizada = disciplinaRepository.findOne(id);
+		Disciplina disciplinaASerApagada = disciplinaRepository.findOne(id);
 		
-		if(disciplina == null) {
+		if(disciplina == null | disciplinaASerApagada == null) {
 			throw new RegisterNotFoundException("Essa disciplina nao existe!");
 		}
 		
-		disciplinaASerAtualizada.setNome(disciplina.getNome());
+		disciplinaRepository.delete(disciplinaASerApagada);
 		
-		disciplinaRepository.save(disciplinaASerAtualizada);
+		disciplinaRepository.save(disciplina);
 		
-		return disciplinaASerAtualizada;
+		return disciplina;
 	}
 }
