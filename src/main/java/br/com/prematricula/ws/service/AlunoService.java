@@ -28,9 +28,9 @@ public class AlunoService {
 	}
 	
 	
-	public Aluno buscarPorEmail(String email) {
+	public Aluno buscarPorMatricula(Integer matricula) {
 		
-		Aluno aluno = alunoRepository.findOne(email);
+		Aluno aluno = alunoRepository.findOne(matricula);
 		
 		if(aluno == null) {
 			throw new RegisterNotFoundException("Esse aluno nao existe!");
@@ -38,6 +38,17 @@ public class AlunoService {
 		
 		
 		return aluno;
+	}
+	
+	public Aluno buscaEmail(String email) {
+		Collection<Aluno> alunos = alunoRepository.findAll();
+		for (Aluno aluno : alunos) {
+			if(aluno.getEmail().equalsIgnoreCase(email)) {
+				return aluno;
+			}
+		}
+		return null;
+		
 	}
 	
 	

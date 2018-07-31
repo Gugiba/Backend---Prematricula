@@ -13,14 +13,11 @@ import javax.persistence.Table;
 public class Aluno {
 
 	
-	
 	@Id
-	private String email;
-	
-	@Column
 	private int matricula;
 	
-	
+	@Column
+	private String email;
 	
 	@Column(nullable = false)
 	private String anoIngressado;

@@ -38,10 +38,14 @@ public class AlunoController {
 		
 	}
 	
-	@RequestMapping(value = "api/alunos/get/email", method = RequestMethod.GET)
-	public ResponseEntity<Aluno> getByemail(@PathVariable("email") String email) {
+	@RequestMapping(value = "api/alunos/get/{nome1}@{nome2}", method = RequestMethod.GET)
+	public ResponseEntity<Aluno> getByemail(@PathVariable("nome1") String nome1,@PathVariable("nome2")String nome2) {
 		
-		Aluno alunoEncontrado = alunoService.buscarPorEmail(email);
+		Aluno alunoEncontrado = alunoService.buscaEmail(nome1 + "." + nome2 + "@ccc.ufcg.edu.br");
+		
+		if(alunoEncontrado == null) {
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		}
 		return new ResponseEntity<> (alunoEncontrado,HttpStatus.OK);
 	}
 	
