@@ -1,7 +1,7 @@
 package br.com.prematricula.ws.model;
 
 import java.util.ArrayList;
-import java.util.Collection;
+
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -51,7 +51,7 @@ public class Aluno {
 		this.anoIngressado = anoIngressado;
 	}
 
-	public Collection<String> getDisciplinasPreMatriculadas() {
+	public ArrayList<String> getDisciplinasPreMatriculadas() {
 		return disciplinasPreMatriculadas;
 	}
 

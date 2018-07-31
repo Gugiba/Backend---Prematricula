@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import br.com.prematricula.ws.model.Aluno;
+import br.com.prematricula.ws.model.PreMatricula;
 import br.com.prematricula.ws.service.AlunoService;
 
 @RestController
@@ -19,6 +20,17 @@ public class AlunoController {
 	
 	@Autowired
 	AlunoService alunoService;
+	
+	@RequestMapping(method = RequestMethod.GET, value = "api/preMatricula/get",produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Collection<PreMatricula>> buscandoMatriculas(){
+		
+		alunoService.matriculasCount();
+		Collection<PreMatricula> matriculasBuscados = alunoService.getPreMatriculas();
+		
+		return new ResponseEntity<> (matriculasBuscados,HttpStatus.OK);
+		
+	}
+	
 	
 	
 	@RequestMapping(method = RequestMethod.POST, value = "api/alunos/post")
