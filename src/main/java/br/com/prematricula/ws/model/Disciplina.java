@@ -21,13 +21,13 @@ public class Disciplina {
 	@Column
 	private Double semestre;
 	@Column
-	private ArrayList<Integer> pos_Requisitos;
+	private ArrayList<String> pos_Requisitos;
 	@Column
 	private Double creditos;
 	@Column
 	private String tipo;
 	@Column
-	private ArrayList<Integer> pre_Requisitos;
+	private ArrayList<String> pre_Requisitos;
 	@Column
 	private Integer codigo_departamento;
 	@Column
@@ -59,11 +59,11 @@ public class Disciplina {
 		this.semestre = semestre;
 	}
 
-	public ArrayList<Integer> getPos_Requisitos() {
+	public ArrayList<String> getPos_Requisitos() {
 		return pos_Requisitos;
 	}
 
-	public void setPos_Requisitos(ArrayList<Integer> pos_Requisitos) {
+	public void setPos_Requisitos(ArrayList<String> pos_Requisitos) {
 		this.pos_Requisitos = pos_Requisitos;
 	}
 
@@ -83,11 +83,11 @@ public class Disciplina {
 		this.tipo = tipo;
 	}
 
-	public ArrayList<Integer> getPre_Requisitos() {
+	public ArrayList<String> getPre_Requisitos() {
 		return pre_Requisitos;
 	}
 
-	public void setPre_Requisitos(ArrayList<Integer> pre_Requisitos) {
+	public void setPre_Requisitos(ArrayList<String> pre_Requisitos) {
 		this.pre_Requisitos = pre_Requisitos;
 	}
 

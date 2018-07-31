@@ -38,20 +38,21 @@ public class AlunoController {
 		
 	}
 	
-	@RequestMapping(value = "api/alunos/get/{matricula}", method = RequestMethod.GET)
-	public Aluno getById(@PathVariable("matricula") int matricula) {
-		return alunoService.buscarPorMatricula(matricula);
+	@RequestMapping(value = "api/alunos/get/email", method = RequestMethod.GET)
+	public ResponseEntity<Aluno> getByemail(@PathVariable("email") String email) {
+		
+		Aluno alunoEncontrado = alunoService.buscarPorEmail(email);
+		return new ResponseEntity<> (alunoEncontrado,HttpStatus.OK);
 	}
 	
-	@RequestMapping(method = RequestMethod.PUT, value = "api/aluno/put",produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Aluno> alterarAluno(Aluno aluno){
+	@RequestMapping(method = RequestMethod.PUT, value = "api/alunos/put",produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Aluno> alterarAluno(@RequestBody Aluno aluno){
 		
 		Aluno alunoAlterado = alunoService.alteraAluno(aluno);
 		
 		return new ResponseEntity<> (alunoAlterado,HttpStatus.OK);
 		
 	}
-	
 	
 	
 }

@@ -2,6 +2,7 @@ package br.com.prematricula.ws.service;
 
 import java.util.Collection;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,9 +28,9 @@ public class AlunoService {
 	}
 	
 	
-	public Aluno buscarPorMatricula(int matricula) {
+	public Aluno buscarPorEmail(String email) {
 		
-		Aluno aluno = alunoRepository.findOne(matricula);
+		Aluno aluno = alunoRepository.findOne(email);
 		
 		if(aluno == null) {
 			throw new RegisterNotFoundException("Esse aluno nao existe!");
@@ -38,6 +39,8 @@ public class AlunoService {
 		
 		return aluno;
 	}
+	
+	
 	
 	public Aluno alteraAluno(Aluno aluno) {
 		
