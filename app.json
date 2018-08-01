@@ -1,6 +1,0 @@
-{
-  "name": "Sistema Pre Matricula",
-  "description": "Projeto da disciplina de Projeto de Software - UFCG",
-  "repository": "https://github.com/Gugiba/Backend---Prematricula.git",
-  "addons": [ "heroku-postgresql" ]
-}
