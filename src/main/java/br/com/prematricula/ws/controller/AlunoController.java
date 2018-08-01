@@ -55,6 +55,7 @@ public class AlunoController {
 		}
 		
 		alunoEncontrado.setDisciplinasPreMatriculadas(cadeiras.getDisciplinas());
+		alunoService.alteraAluno(alunoEncontrado);
 		return new ResponseEntity<> (alunoEncontrado,HttpStatus.OK);
 	}
 	
