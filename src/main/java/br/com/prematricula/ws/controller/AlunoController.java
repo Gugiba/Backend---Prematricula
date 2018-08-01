@@ -1,5 +1,6 @@
 package br.com.prematricula.ws.controller;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,14 +44,16 @@ public class AlunoController {
 		
 	}
 	
-	@RequestMapping(value = "/prematricula/alunos/{nome1}@{nome2}", method = RequestMethod.GET)
-	public ResponseEntity<Aluno> getByemail(@PathVariable("nome1") String nome1,@PathVariable("nome2")String nome2) {
+	@RequestMapping(value = "/prematricula/alunos/{matricula}", method = RequestMethod.POST)
+	public ResponseEntity<Aluno> addcadeiras(@PathVariable("matricula") int matricula, @RequestBody ArrayList<String> cadeiras) {
 		
-		Aluno alunoEncontrado = alunoService.buscaEmail(nome1 + "." + nome2 + "@ccc.ufcg.edu.br");
+		Aluno alunoEncontrado = alunoService.buscarPorMatricula(matricula);
 		
 		if(alunoEncontrado == null) {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
+		
+		alunoEncontrado.setDisciplinasPreMatriculadas(cadeiras);
 		return new ResponseEntity<> (alunoEncontrado,HttpStatus.OK);
 	}
 	
