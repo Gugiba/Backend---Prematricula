@@ -19,7 +19,7 @@ public class PreMatriculaController {
 	@Autowired
 	PreMatriculaService preMatriculaService;
 	
-	@RequestMapping(method = RequestMethod.GET, value = "api/preMatricula/get",produces = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(method = RequestMethod.GET, value = "/prematricula/api",produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Collection<PreMatricula>> buscandoMatriculas(){
 		
 		preMatriculaService.matriculasCount();

@@ -26,7 +26,7 @@ public class CoordenadorController {
 	CoordenadorService coordenadorService;
 	
 	
-	@RequestMapping(method = RequestMethod.POST, value = "api/coordenador/post")
+	@RequestMapping(method = RequestMethod.POST, value = "/prematricula/coordenador")
 	public ResponseEntity<Coordenador> cadastrarCoordenador(@RequestBody Coordenador coordenador){
 		
 		Coordenador coordenadorACadastrar = coordenadorService.cadastrar(coordenador);
@@ -35,13 +35,13 @@ public class CoordenadorController {
 	}
 	
 	
-	@RequestMapping(value = "api/coordenador/get", method = RequestMethod.GET)
+	@RequestMapping(value = "/prematricula/coordenador", method = RequestMethod.GET)
 	public ResponseEntity<Collection<Coordenador>> busca() {
 		return new ResponseEntity<>(coordenadorService.buscarTodos(), HttpStatus.OK);
 	}
 	
 	
-	@RequestMapping(value = "/api/coordenador/put/{email}", method = RequestMethod.PUT)
+	@RequestMapping(value = "/prematricula/coordenador/{email}", method = RequestMethod.PUT)
 	public ResponseEntity<Coordenador> editarSenhar(@PathVariable("email") String emailCoordenador, @RequestBody Coordenador coordenador) throws Exception {
 		Integer id = coordenadorService.encontrarIdPorEmail(emailCoordenador);
 		

@@ -25,7 +25,7 @@ public class AlunoController {
 	
 	
 	
-	@RequestMapping(method = RequestMethod.POST, value = "api/alunos/post")
+	@RequestMapping(method = RequestMethod.POST, value = "/prematricula/alunos")
 	public ResponseEntity<Aluno> cadastrarAluno(@RequestBody Aluno aluno){
 		
 		Aluno alunoCadastrado = alunoService.cadastrar(aluno);
@@ -33,7 +33,7 @@ public class AlunoController {
 		
 	}
 	
-	@RequestMapping(method = RequestMethod.GET, value = "api/alunos/get",produces = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(method = RequestMethod.GET, value = "/prematricula/alunos",produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Collection<Aluno>> buscarTodosAlunos(){
 		
 		Collection<Aluno> alunosBuscados = alunoService.buscarTodos();
@@ -42,7 +42,7 @@ public class AlunoController {
 		
 	}
 	
-	@RequestMapping(value = "api/alunos/get/{nome1}@{nome2}", method = RequestMethod.GET)
+	@RequestMapping(value = "/prematricula/alunos/{nome1}@{nome2}", method = RequestMethod.GET)
 	public ResponseEntity<Aluno> getByemail(@PathVariable("nome1") String nome1,@PathVariable("nome2")String nome2) {
 		
 		Aluno alunoEncontrado = alunoService.buscaEmail(nome1 + "." + nome2 + "@ccc.ufcg.edu.br");
@@ -53,7 +53,7 @@ public class AlunoController {
 		return new ResponseEntity<> (alunoEncontrado,HttpStatus.OK);
 	}
 	
-	@RequestMapping(method = RequestMethod.PUT, value = "api/alunos/put",produces = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(method = RequestMethod.PUT, value = "/prematricula/alunos",produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Aluno> alterarAluno(@RequestBody Aluno aluno){
 		
 		Aluno alunoAlterado = alunoService.alteraAluno(aluno);
