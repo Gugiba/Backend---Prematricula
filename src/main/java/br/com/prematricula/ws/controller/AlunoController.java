@@ -21,15 +21,7 @@ public class AlunoController {
 	@Autowired
 	AlunoService alunoService;
 	
-	@RequestMapping(method = RequestMethod.GET, value = "api/preMatricula/get",produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Collection<PreMatricula>> buscandoMatriculas(){
-		
-		alunoService.matriculasCount();
-		Collection<PreMatricula> matriculasBuscados = alunoService.getPreMatriculas();
-		
-		return new ResponseEntity<> (matriculasBuscados,HttpStatus.OK);
-		
-	}
+	
 	
 	
 	
