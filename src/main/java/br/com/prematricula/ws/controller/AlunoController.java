@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import br.com.prematricula.ws.model.Aluno;
+import br.com.prematricula.ws.model.CadastroDisciplinas;
 import br.com.prematricula.ws.service.AlunoService;
 
 @CrossOrigin(origins = "*")
@@ -45,7 +46,7 @@ public class AlunoController {
 	}
 	
 	@RequestMapping(value = "/prematricula/alunos/{matricula}", method = RequestMethod.POST)
-	public ResponseEntity<Aluno> addcadeiras(@PathVariable("matricula") int matricula, @RequestBody ArrayList<String> cadeiras) {
+	public ResponseEntity<Aluno> addcadeiras(@PathVariable("matricula") int matricula, @RequestBody CadastroDisciplinas cadeiras) {
 		
 		Aluno alunoEncontrado = alunoService.buscarPorMatricula(matricula);
 		
@@ -53,7 +54,7 @@ public class AlunoController {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
 		
-		alunoEncontrado.setDisciplinasPreMatriculadas(cadeiras);
+		alunoEncontrado.setDisciplinasPreMatriculadas(cadeiras.getDisciplinas());
 		return new ResponseEntity<> (alunoEncontrado,HttpStatus.OK);
 	}
 	
