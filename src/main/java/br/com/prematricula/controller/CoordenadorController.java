@@ -1,4 +1,4 @@
-package br.com.prematricula.ws.controller;
+package br.com.prematricula.controller;
 
 import java.util.Collection;
 
@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.prematricula.ws.model.Coordenador;
+import br.com.prematricula.model.Coordenador;
 
-import br.com.prematricula.ws.service.CoordenadorService;
+import br.com.prematricula.service.CoordenadorService;
 
 @CrossOrigin(origins = "*")
 @RestController

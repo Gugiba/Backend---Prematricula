@@ -1,4 +1,4 @@
-package br.com.prematricula.ws.controller;
+package br.com.prematricula.controller;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import br.com.prematricula.ws.model.Aluno;
-import br.com.prematricula.ws.model.CadastroDisciplinas;
-import br.com.prematricula.ws.service.AlunoService;
+import br.com.prematricula.model.Aluno;
+import br.com.prematricula.model.CadastroDisciplinas;
+import br.com.prematricula.service.AlunoService;
 
 @CrossOrigin(origins = "*")
 @RestController

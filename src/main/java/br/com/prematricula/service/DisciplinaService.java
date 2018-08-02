@@ -1,4 +1,4 @@
-package br.com.prematricula.ws.service;
+package br.com.prematricula.service;
 
 import java.util.Collection;
 
@@ -7,8 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.com.prematricula.exception.RegisterNotFoundException;
-import br.com.prematricula.ws.model.Disciplina;
-import br.com.prematricula.ws.repository.DisciplinaRepository;
+import br.com.prematricula.model.Disciplina;
+import br.com.prematricula.repository.DisciplinaRepository;
 
 
 

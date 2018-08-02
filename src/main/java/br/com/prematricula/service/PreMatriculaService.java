@@ -1,4 +1,4 @@
-package br.com.prematricula.ws.service;
+package br.com.prematricula.service;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -6,10 +6,10 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.com.prematricula.ws.model.Aluno;
-import br.com.prematricula.ws.model.PreMatricula;
-import br.com.prematricula.ws.repository.AlunoRepository;
-import br.com.prematricula.ws.repository.PreMatriculaRepository;
+import br.com.prematricula.model.Aluno;
+import br.com.prematricula.model.PreMatricula;
+import br.com.prematricula.repository.AlunoRepository;
+import br.com.prematricula.repository.PreMatriculaRepository;
 
 @Service
 public class PreMatriculaService {

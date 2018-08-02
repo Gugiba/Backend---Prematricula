@@ -1,4 +1,4 @@
-package br.com.prematricula.ws.model;
+package br.com.prematricula.model;
 
 
 

@@ -1,4 +1,4 @@
-package br.com.prematricula.ws.controller;
+package br.com.prematricula.controller;
 
 import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import br.com.prematricula.ws.model.Disciplina;
-import br.com.prematricula.ws.service.DisciplinaService;
+import br.com.prematricula.model.Disciplina;
+import br.com.prematricula.service.DisciplinaService;
 
 
 @CrossOrigin(origins = "*")

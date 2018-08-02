@@ -1,4 +1,4 @@
-package br.com.prematricula.ws.model;
+package br.com.prematricula.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

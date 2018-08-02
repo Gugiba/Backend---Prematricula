@@ -1,8 +1,8 @@
-package br.com.prematricula.ws.repository;
+package br.com.prematricula.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import br.com.prematricula.ws.model.Aluno;
+import br.com.prematricula.model.Aluno;
 
 public interface AlunoRepository extends JpaRepository<Aluno,Integer> {
 

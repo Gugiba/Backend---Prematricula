@@ -1,9 +1,9 @@
-package br.com.prematricula.ws.repository;
+package br.com.prematricula.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import br.com.prematricula.ws.model.Coordenador;
+import br.com.prematricula.model.Coordenador;
 
 
 
