@@ -28,20 +28,22 @@ public class PreMatriculaService {
 		
 		for (Aluno aluno : alunos) {
 			ArrayList<String> cadeiras = aluno.getDisciplinasPreMatriculadas();
+			
 			for(String cadeira : cadeiras) {
+			    
 				
 				
+			    	if(!checarExistencia(cadeira))
+			    		addCadeira(cadeira);
 				
-				if(!checarExistencia(cadeira))
-					
-					addCadeira(cadeira);
+			    	else { 
+			    		incrementaVagas(cadeira);
+			    	}
+                }
 				
-				else { 
-				incrementaVagas(cadeira);
-				}
-				
-			}
+			
 		}
+		
 		
 	}
 	
